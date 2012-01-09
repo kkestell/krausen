@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js" type="text/javascript"></script>
+  <script src="krausen.js" type="text/javascript"></script>
+  <script>
+  $(function() {
+    $('#recipe').keyup(function() {
+      var recipe = new BeerRecipe(JSON.parse($('#recipe').val()));
+      $('#og').html(recipe.og().toFixed(3));
+      $('#fg').html(recipe.fg().toFixed(3));
+      $('#color').html(recipe.color().toFixed(0) + ' &deg;L');
+      $('#ibu').html(recipe.ibu().toFixed(0) + ' IBU');
+      $('#abv').html(recipe.abv().toFixed(1) + '%');
+    }).keyup();
+  });
+  </script>
+  <style>
+    textarea, dl {
+      float: left;
+    }
+
+    textarea {
+      margin-right: 3em;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="recipe" rows="40" cols="40">{
+  "batch_size": 5,
+  "efficiency": 75,
+  "evaporation_rate": 20,
+  "boil_time": 60,
+  "boil_size": 6.25,
+  "attenuation": 75,
+  "fermentables": [
+    {
+      "amount": 9,
+      "ppg": 36,
+      "color": 1,
+      "type": "Grain"
+    },
+    {
+      "amount": 1,
+      "ppg": 34,
+      "color": 60,
+      "type": "Grain"
+    }
+  ],
+  "hops":[
+    {
+      "time": 60,
+      "amount": 1,
+      "alpha": 8.75,
+      "hop_use": "Boil"
+    }
+  ]
+}</textarea>
+  <dl>
+    <dt>OG</dt>
+    <dd id="og"></dd>
+    <dt>FG</dt>
+    <dd id="fg"></dd>
+    <dt>Color</dt>
+    <dd id="color"></dd>
+    <dt>IBU</dt>
+    <dd id="ibu"></dd>
+    <dt>ABV</dt>
+    <dd id="abv"></dd>
+  </dl>
+</body>
+</html>
