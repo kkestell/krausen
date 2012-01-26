@@ -74,4 +74,8 @@ function BeerRecipe(attrs) {
     }
     return 1.4922 * Math.pow(mcu, 0.6859);
   }
+
+  this.balance = function() {
+    return this.ibu() / ((this.og() - 1.0) * 1000.0);
+  }
 }

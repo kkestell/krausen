@@ -13,6 +13,7 @@
       $('#color').html(recipe.color().toFixed(0) + ' &deg;L');
       $('#ibu').html(recipe.ibu().toFixed(0) + ' IBU');
       $('#abv').html(recipe.abv().toFixed(1) + '%');
+      $('#balance').html(recipe.balance().toFixed(2));
     }).keyup();
   });
   </script>
@@ -70,6 +71,8 @@
     <dd id="ibu"></dd>
     <dt>ABV</dt>
     <dd id="abv"></dd>
+    <dt>Balance</dt>
+    <dd id="balance"></dd>
   </dl>
 </body>
 </html>
