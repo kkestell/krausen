@@ -19,44 +19,29 @@ Krausen supports both U.S. customary and metric units.
 
 ```javascript
 var recipeJson = {
-  "batch_size": "5.5 gal",
-
-  // Percents can be numbers
-  "efficiency": 75,          
-
-  // ...or strings with units
-  "evaporation_rate": "20 %",      
-
-  "boil_time": "60 min",
-  "boil_size": "6.25 gal",
-  "attenuation": 75,
-
-  // "All Grain", "Partial Mash", or "Extract"
-  "recipe_type": "All Grain",      
-
+  "batch_size": "5.5 gal",         // Gallons
+  "efficiency": 75,                // Percents can be numbers
+  "evaporation_rate": "20 %",      // ...or strings with units
+  "boil_time": "60 min",           // Minutes
+  "boil_size": "6.25 gal",         // Gallons
+  "attenuation": 75,               // Percent
+  "recipe_type": "All Grain",      // "All Grain", "Partial Mash", or "Extract"
   "fermentables": [
     {
-      "amount": "9.25 lbs",
-
-      // PPG
-      "ppg": 36,                   
-
-      // Degrees Lovibond
-      "color": 1,           
-
-      // "Grain", "Sugar", "Extract", "Dry Extract", or "Adjunct"   
-      "type": "Grain"              
+      "amount": "9.25 lbs",        // Pounds
+      "ppg": 36,                   // PPG
+      "color": 1,                  // Degrees Lovibond
+      "type": "Grain"              // "Grain", "Sugar", "Extract", "Dry Extract",
+                                   // or "Adjunct"
     }
   ],
-
   "hops": [
     {
-      "time": "60 min",
-      "amount": "1.5 oz",
-      "alpha": 8.75,
-
-      // "Boil", "Dry Hop", "Mash", "First Wort", or "Aroma"
-      "hop_use": "Boil"
+      "time": "60 min",            // Minutes
+      "amount": "1.5 oz",          // Ounces
+      "alpha": 8.75,               // Percent
+      "hop_use": "Boil"            // "Boil", "Dry Hop", "Mash", "First Wort",
+                                   // or "Aroma"
     }
   ]
 };
