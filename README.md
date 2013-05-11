@@ -13,33 +13,32 @@ Given a JSON object representing the recipe, Krausen can predict the following p
 * Alcohol by volume (ABV)
 * Bitterness ratio (Balance)
 
-Krausen supports both U.S. customary and metric units.
-
 ## Example
 
 ```javascript
 var recipeJson = {
-  "batch_size": "5.5 gal",         // Gallons
-  "efficiency": 75,                // Percents can be numbers
-  "evaporation_rate": "20 %",      // ...or strings with units
-  "boil_time": "60 min",           // Minutes
-  "boil_size": "6.25 gal",         // Gallons
-  "attenuation": 75,               // Percent
-  "recipe_type": "All Grain",      // "All Grain", "Partial Mash", or "Extract"
+  "batch_size":       5.5,         // Gallons
+  "efficiency":       75,          // Percent
+  "evaporation_rate": 20,          // Percent
+  "boil_time":        60,          // Minutes
+  "boil_size":        6.25,        // Gallons
+  "top_up_water":     0,           // Gallons
+  "attenuation":      75,          // Percent
+  "recipe_type":      "All Grain", // "All Grain", "Partial Mash", or "Extract"
   "fermentables": [
     {
-      "amount": "9.25 lbs",        // Pounds
-      "ppg": 36,                   // PPG
-      "color": 1,                  // Degrees Lovibond
-      "type": "Grain"              // "Grain", "Sugar", "Extract", "Dry Extract",
+      "amount": 9.25,              // Pounds
+      "ppg":    36,                // PPG
+      "color":  1,                 // Degrees Lovibond
+      "type":   "Grain"            // "Grain", "Sugar", "Extract", "Dry Extract",
                                    // or "Adjunct"
     }
   ],
   "hops": [
     {
-      "time": "60 min",            // Minutes
-      "amount": "1.5 oz",          // Ounces
-      "alpha": 8.75,               // Percent
+      "time":    60,               // Minutes
+      "amount":  1.5,              // Ounces
+      "alpha":   8.75,             // Percent
       "hop_use": "Boil"            // "Boil", "Dry Hop", "Mash", "First Wort",
                                    // or "Aroma"
     }
