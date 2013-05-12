@@ -14,17 +14,34 @@
       $('#ibu').html(recipe.ibu().toFixed(0) + ' IBU');
       $('#abv').html(recipe.abv().toFixed(1) + '%');
       $('#balance').html(recipe.balance().toFixed(2));
+      $('#boil-size').html(recipe.boil_size().toFixed(2) + ' gal');
     }).keyup();
   });
   </script>
   <style>
-    textarea, dl {
+    body {
+      font-family: sans-serif;
+    }
+
+    textarea {
       float: left;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-bottom: 0.5em;
     }
 
     textarea {
       margin-right: 3em;
       font-family: monospace;
+    }
+
+    button {
+      clear: left;
     }
   </style>
 </head>
@@ -36,7 +53,6 @@
   "evaporation_rate": 20,
   "boil_time":        60,
   "top_up_water":     0,
-  "boil_size":        6.25,
   "attenuation":      75,
   "recipe_type":      "All Grain",
   "fermentables": [
@@ -81,6 +97,8 @@
     <dd id="abv"></dd>
     <dt>Balance</dt>
     <dd id="balance"></dd>
+    <dt>Boil Size</dt>
+    <dd id="boil-size"></dd>
   </dl>
 </body>
 </html>

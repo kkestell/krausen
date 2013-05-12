@@ -13,6 +13,8 @@ Given a JSON object representing the recipe, Krausen can predict the following p
 * Alcohol by volume (ABV)
 * Bitterness ratio (Balance)
 
+Krausen can also calculate boil size based on batch size, evaporation rate, boil time, and top up water.
+
 ## Example
 
 ```javascript
@@ -21,7 +23,6 @@ var recipeJson = {
   "efficiency":       75,          // Percent
   "evaporation_rate": 20,          // Percent
   "boil_time":        60,          // Minutes
-  "boil_size":        6.25,        // Gallons
   "top_up_water":     0,           // Gallons
   "attenuation":      75,          // Percent
   "recipe_type":      "All Grain", // "All Grain", "Partial Mash", or "Extract"
@@ -53,6 +54,7 @@ recipe.color();
 recipe.ibu();
 recipe.abv();
 recipe.balance();
+recipe.boil_size();
 ```
 
 ## License

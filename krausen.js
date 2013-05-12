@@ -5,11 +5,6 @@ function BeerRecipe(attrs) {
     this[i] = attrs[i];
   }
 
-  function round(num, dec) {
-    var result = Math.round(num * Math.pow(10, dec)) / Math.pow(10, dec);
-    return result;
-  }
-
   function sg(volume) {
     var points = 0;
     for(var i in self.fermentables) {
@@ -38,14 +33,11 @@ function BeerRecipe(attrs) {
 
   function boil_sg() {
     // Assume average volume
-    return sg((self.boil_size + self.batch_size) / 2);
+    return sg((self.boil_size() + self.batch_size) / 2);
   }
 
-  this.calculate_boil_size = function(batch_size) {
-    if(!batch_size) {
-      batch_size = self.batch_size;
-    }
-    return (batch_size - self.top_up_water_volume) / (1 - (self.evaporation_rate / 100) * self.boil_time / 60);
+  this.boil_size = function() {
+    return (self.batch_size - self.top_up_water) / (1 - (self.evaporation_rate / 100) * self.boil_time / 60);
   }
 
   this.og = function() {
